@@ -12,6 +12,7 @@ import Contact from "./pages/contact";
 import Details from "./pages/details";
 import Shop from "./pages/shop";
 import Home from "./pages/home";
+import SignIn from "./pages/signin";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/details" element={<Details />} />
+        <Route path="/signin" element={<SignIn />} />
       </Route>
     )
   );

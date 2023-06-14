@@ -1,10 +1,25 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  return <AppContext.Provider value={{}}>{children}</AppContext.Provider>;
+  const [navToggle, setNavToggle] = useState(false);
+
+  const handleToggle = () => {
+    setNavToggle(!navToggle);
+  };
+
+  return (
+    <AppContext.Provider
+      value={{
+        handleToggle,
+        navToggle,
+      }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
 };
 
 export const useGlobalContext = () => {
